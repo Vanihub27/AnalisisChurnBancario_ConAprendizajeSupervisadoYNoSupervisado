@@ -1,0 +1,145 @@
+# 🏦 Predicción de Churn Bancario
+## Proyecto End-to-End de Machine Learning | Pipeline Orientado a Negocio
+
+### Descripción del Proyecto:
+Este proyecto desarrolla una solución integral de Machine Learning para predecir el abandono de clientes en un banco.
+
+Más allá de construir modelos predictivos, el enfoque estuvo en:
+- Traducir métricas técnicas a impacto de negocio.
+- Identificar drivers accionables del churn.
+- Comparar complejidad vs interpretabilidad.
+- Diseñar un framework de scoring aplicable en producción.
+
+El resultado es un pipeline analítico completo que combina modelado predictivo, segmentación y recomendaciones estratégicas.
+
+#### Teniendo en cuenta que el churn impacta directamente en:
+- Customer Lifetime Value (CLV).
+- Costos de retención.
+- Estabilidad de ingresos.
+
+### 🎯 Los ojetivo de Negocio fueron:
+- Predecir la probabilidad de abandono a nivel individual.
+- Identificar variables clave que explican el churn.
+- Proveer recomendaciones estratégicas al equipo de retención.
+- Priorizar intervenciones basadas en riesgo.
+- Variable objetivo: Exited (1 = abandona, 0 = permanece).
+
+### 🧩 Arquitectura del Proyecto: 
+#### EDA → Regresión Logística → Gradient Boosting → Stacking → Clustering → Consolidación → Insights de Negocio
+
+### Cuatro Fases principales:
+
+### 📊 Fase 1 – Modelo Base Interpretable (Regresión Logística)
+¿Por qué? Comenzar con un modelo explicable y estadísticamente sólido.
+
+Trabajo realizado:
+- Análisis Exploratorio de Datos (EDA).
+- Preprocesamiento (encoding + escalado).
+- Implementación de Regresión Logística.
+- Evaluación con ROC-AUC, PR-AUC, Recall y Precision.
+- Matriz de confusión.
+- Interpretación de coeficientes y Odds Ratio.
+
+Insights clave
+- La edad incrementa significativamente la probabilidad de churn.
+- Clientes de Alemania presentan mayor riesgo.
+- Alto balance combinado con baja actividad aumenta abandono.
+- Ser miembro activo reduce fuertemente la probabilidad de churn.
+
+📌 Se construyó un modelo base completamente interpretable.
+
+
+
+### ⚡ Fase 2 – Optimización de Performance (Modelos de Ensamble)
+Modelos implementados:
+
+- Random Forest.
+- XGBoost (baseline y optimizado con GridSearch).
+- LightGBM.
+- CatBoost.
+- Stacking Classifier.
+
+Técnicas avanzadas aplicadas:
+- Validación cruzada estratificada.
+- Optimización de hiperparámetros.
+- Comparación estructurada mediante ROC-AUC.
+- Análisis de feature importance.
+- Regularización (alpha y lambda).
+- Early stopping.
+
+Resultados:
+Los modelos de boosting superaron al modelo lineal.
+El stacking combinó señales complementarias.
+Se evaluó el trade-off entre interpretabilidad y mejora predictiva.
+
+📌 Se construyó un framework predictivo robusto y escalable.
+
+
+
+### 🔬 Fase 3 – Segmentación de Clientes (Clustering)
+La predicción no es suficiente sin contexto estratégico.
+
+Se incorporó análisis no supervisado:
+- Eliminación del target para clustering.
+- Aplicación de K-Means.
+- Perfilado de clusters por variables financieras y conductuales.
+- Análisis cruzado cluster vs churn.
+
+Valor estratégico:
+- Permite diseñar estrategias diferenciadas para:
+- Clientes de alto balance y alto riesgo.
+- Segmentos con baja actividad.
+- Clientes estables y leales.
+
+📌 Se agregó inteligencia estructural al modelo predictivo.
+
+
+
+### 📈 Fase 4 – Consolidación y Framework de Decisión
+
+Análisis final orientado a negocio que incluye:
+
+- Comparación integral de modelos.
+- Benchmarking con ROC-AUC.
+- Evaluación del threshold (0.5 baseline).
+- Análisis de trade-offs en matriz de confusión.
+- Recomendaciones estratégicas.
+- Reporte técnico ejecutivo en PDF.
+- Insights orientados a decisión.
+
+Aspectos a tener en cuenta:
+- El threshold es una decisión estratégica, no solo técnica.
+- Optimizar Recall puede mejorar la eficiencia de retención.
+- Boosting ofrece mayor capacidad de discriminación.
+- La regresión logística mantiene alto valor explicativo.
+
+
+📌 Se entregó un informe listo para toma de decisiones.
+
+🧠 Competencias Demostradas:
+- Desarrollo de pipeline end-to-end
+- Clasificación binaria
+- Modelos de ensamble avanzados
+- Estrategias de validación cruzada
+- Comparación estructurada de modelos
+- Interpretación estadística (Odds Ratio)
+- Traducción de métricas técnicas a impacto de negocio
+- Segmentación de clientes
+- Storytelling analítico
+
+🛠️ Stack Tecnológico implementado:
+Python
+Pandas
+NumPy
+Scikit-learn
+XGBoost
+LightGBM
+CatBoost
+Matplotlib / Seaborn
+
+📌 Diferencial del Proyecto:
+✔ Combina interpretabilidad y performance.
+✔ Integra aprendizaje supervisado y no supervisado.
+✔ Prioriza métricas relevantes para negocio.
+✔ Traducido a recomendaciones accionables.
+✔ Pensado como solución aplicable en producción.
