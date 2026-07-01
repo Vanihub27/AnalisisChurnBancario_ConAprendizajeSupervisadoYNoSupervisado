@@ -1,8 +1,13 @@
 📈 Churn = 20,4%
+
 🎯 Mejor modelo: Stacking
+
 📊 ROC-AUC: 0.87
+
 👥 Dataset: 10.000 clientes
+
 🤖 Modelos evaluados: 6
+
 # 🏦 Predicción de Churn Bancario
 
 
