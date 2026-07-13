@@ -3,8 +3,6 @@
 
 <p align="center">
 
-<!-- Aquí irá el banner -->
-
 <img src="assets/banner_bank_churn.png" width="100%"/>
 
 </p>
@@ -18,6 +16,8 @@
 ![XGBoost](https://img.shields.io/badge/XGBoost-EC6B23?style=for-the-badge)
 ![LightGBM](https://img.shields.io/badge/LightGBM-9ACD32?style=for-the-badge)
 ![CatBoost](https://img.shields.io/badge/CatBoost-FFCC00?style=for-the-badge)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge)
+![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github)
 
@@ -29,43 +29,44 @@
 
 | Indicador | Valor |
 |-----------|------:|
-| 📈 Churn del dataset | 20,4 % |
-| 👥 Clientes analizados | 10.000 |
-| 🤖 Modelos entrenados | 6 |
-| 🏆 Mejor modelo | Stacking |
-| 📊 ROC-AUC | 0.87 |
+| 📈 Tasa de Churn | **20,4 %** |
+| 👥 Clientes analizados | **10.000** |
+| 🤖 Modelos entrenados | **6** |
+| 🏆 Mejor modelo | **Stacking Classifier** |
+| 📊 ROC-AUC | **0.87** |
 
 ---
 
 # 📑 Tabla de contenidos
 
-- Caso de negocio
-- Objetivos
-- Dataset
-- Tecnologías utilizadas
-- Metodología
-- Flujo del proyecto
-- Desarrollo
-- Resultados
-- Competencias demostradas
-- Valor agregado
-- Próximas mejoras
-- Autora
+- [Caso de negocio](#-caso-de-negocio)
+- [Objetivos](#-objetivos)
+- [Dataset](#-dataset)
+- [Tecnologías utilizadas](#-tecnologías-utilizadas)
+- [Metodología](#-metodología)
+- [Flujo del proyecto](#-flujo-del-proyecto)
+- [Desarrollo](#-desarrollo-del-proyecto)
+- [Resultados](#-resultados)
+- [Visualizaciones](#-visualizaciones)
+- [Competencias demostradas](#-competencias-demostradas)
+- [Valor agregado](#-valor-agregado)
+- [Próximas mejoras](#-próximas-mejoras)
+- [Autora](#-autora)
 
 ---
 
 # 💼 Caso de negocio
 
-La pérdida de clientes (*customer churn*) representa uno de los principales desafíos para las entidades financieras, ya que impacta directamente en el Customer Lifetime Value (CLV), los costos de adquisición y la rentabilidad del negocio.
+La pérdida de clientes (*Customer Churn*) representa uno de los principales desafíos para las entidades financieras, ya que impacta directamente sobre el **Customer Lifetime Value (CLV)**, los costos de adquisición y la rentabilidad del negocio.
 
-El objetivo de este proyecto consiste en desarrollar un pipeline completo de Machine Learning capaz de identificar clientes con alto riesgo de abandono, permitiendo anticipar acciones de retención y optimizar la toma de decisiones comerciales.
+El objetivo de este proyecto consiste en desarrollar un **pipeline completo de Machine Learning** capaz de identificar clientes con alto riesgo de abandono, permitiendo anticipar acciones de retención y optimizar la toma de decisiones comerciales.
 
 ---
 
 # 🎯 Objetivos
 
 - Predecir la probabilidad de abandono de clientes.
-- Comparar diferentes algoritmos de Machine Learning.
+- Comparar distintos algoritmos de Machine Learning.
 - Identificar las variables con mayor influencia sobre el churn.
 - Segmentar clientes mediante técnicas de aprendizaje no supervisado.
 - Traducir los resultados en recomendaciones accionables para el negocio.
@@ -76,24 +77,25 @@ El objetivo de este proyecto consiste en desarrollar un pipeline completo de Mac
 
 **Fuente:** Kaggle – Bank Customer Churn Dataset
 
-Características principales:
+**Características principales**
 
-- 👥 Registros: 10.000 clientes
-- 📋 Variables: XX
+- 👥 Registros: **10.000 clientes**
+- 📋 Variables predictoras: **10**
 - 🎯 Variable objetivo: **Exited**
-- Tipo de problema: Clasificación binaria
+- 📊 Tipo de problema: **Clasificación binaria**
 
-Variables relevantes:
+Variables más relevantes:
 
+- CreditScore
 - Geography
 - Gender
 - Age
+- Tenure
 - Balance
 - NumOfProducts
+- HasCrCard
 - IsActiveMember
 - EstimatedSalary
-- CreditScore
-- Tenure
 
 ---
 
@@ -122,7 +124,7 @@ El proyecto fue desarrollado siguiendo la metodología **CRISP-DM**, recorriendo
 - Preparación de los datos
 - Modelado
 - Evaluación
-- Recomendaciones
+- Comunicación de resultados
 
 ---
 
@@ -131,19 +133,19 @@ El proyecto fue desarrollado siguiendo la metodología **CRISP-DM**, recorriendo
 ```mermaid
 flowchart LR
 
-A[Dataset] --> B[Limpieza de datos]
+A[(Dataset)] --> B[Data Cleaning]
 
 B --> C[EDA]
 
 C --> D[Feature Engineering]
 
-D --> E[Modelos Supervisados]
+D --> E[Modelado Supervisado]
 
 E --> F[Evaluación]
 
 F --> G[Clustering]
 
-G --> H[Reporte Ejecutivo]
+G --> H[Business Insights]
 
 H --> I[Recomendaciones]
 ```
@@ -157,7 +159,8 @@ H --> I[Recomendaciones]
 Se realizaron:
 
 - Análisis Exploratorio de Datos (EDA)
-- Limpieza y tratamiento de valores faltantes
+- Limpieza de datos
+- Tratamiento de valores faltantes
 - Ingeniería de variables
 - Escalado
 - Codificación de variables categóricas
@@ -166,14 +169,14 @@ Se realizaron:
 
 - La edad incrementa significativamente el riesgo de abandono.
 - Los clientes de Alemania presentan mayor probabilidad de churn.
-- Un alto balance combinado con baja actividad aumenta el riesgo.
-- Ser un cliente activo reduce considerablemente la probabilidad de abandono.
+- Un alto balance combinado con baja actividad incrementa el riesgo.
+- Los clientes activos presentan menor probabilidad de abandono.
 
 ---
 
 ## 2️⃣ Modelado supervisado
 
-Modelos implementados:
+### Modelos implementados
 
 - Logistic Regression
 - Random Forest
@@ -182,7 +185,7 @@ Modelos implementados:
 - CatBoost
 - Stacking Classifier
 
-Técnicas utilizadas:
+### Técnicas aplicadas
 
 - Validación cruzada estratificada
 - GridSearchCV
@@ -195,15 +198,15 @@ Técnicas utilizadas:
 
 ## 3️⃣ Segmentación de clientes
 
-Se aplicó K-Means para identificar perfiles de clientes con diferentes características de comportamiento y riesgo de abandono.
+Se aplicó **K-Means** para identificar perfiles de clientes con diferentes características de comportamiento y riesgo de abandono.
 
-La segmentación permitió complementar el modelo predictivo con una visión estratégica para campañas de retención.
+La segmentación complementó el modelo predictivo permitiendo proponer estrategias diferenciadas de retención.
 
 ---
 
 ## 4️⃣ Consolidación y recomendaciones
 
-Se compararon todos los modelos mediante:
+Se realizó una comparación integral de los modelos considerando:
 
 - Accuracy
 - Precision
@@ -226,7 +229,7 @@ Finalmente se elaboró un reporte ejecutivo con recomendaciones orientadas al ne
 | XGBoost | | | |
 | LightGBM | | | |
 | CatBoost | | | |
-| **Stacking** | **XX** | **0.87** | **XX** |
+| **Stacking Classifier** | **0.871** | **0.871** | **0.725** |
 
 ---
 
@@ -234,25 +237,25 @@ Finalmente se elaboró un reporte ejecutivo con recomendaciones orientadas al ne
 
 ## Curva ROC
 
-*(Agregar imagen)*
+> *(Agregar imagen)*
 
 ---
 
 ## Matriz de confusión
 
-*(Agregar imagen)*
+> *(Agregar imagen)*
 
 ---
 
 ## Importancia de variables
 
-*(Agregar imagen)*
+> *(Agregar imagen)*
 
 ---
 
 # 💼 Competencias demostradas
 
-- Machine Learning End-to-End
+- End-to-End Machine Learning
 - Clasificación binaria
 - Aprendizaje supervisado
 - Aprendizaje no supervisado
@@ -261,33 +264,33 @@ Finalmente se elaboró un reporte ejecutivo con recomendaciones orientadas al ne
 - Interpretabilidad de modelos
 - Segmentación de clientes
 - Storytelling con datos
-- Traducción de métricas técnicas a decisiones de negocio
+- Traducción de métricas técnicas en decisiones de negocio
 
 ---
 
 # ⭐ Valor agregado
 
-✔ Pipeline completo de Ciencia de Datos.
+✅ Desarrollo de un pipeline completo de Ciencia de Datos.
 
-✔ Comparación de seis algoritmos de Machine Learning.
+✅ Comparación de seis algoritmos de Machine Learning.
 
-✔ Integración de modelos supervisados y no supervisados.
+✅ Integración de modelos supervisados y no supervisados.
 
-✔ Interpretación de resultados orientada al negocio.
+✅ Interpretación de resultados orientada a negocio.
 
-✔ Desarrollo siguiendo metodología CRISP-DM.
+✅ Aplicación de la metodología **CRISP-DM**.
 
-✔ Recomendaciones accionables para estrategias de retención.
+✅ Elaboración de recomendaciones accionables para estrategias de retención.
 
 ---
 
 # 🚀 Próximas mejoras
 
-- Implementación de MLflow para seguimiento de experimentos.
-- Despliegue mediante Streamlit.
-- Automatización del pipeline.
-- Monitoreo del modelo.
-- Entrenamiento continuo.
+- Implementar seguimiento de experimentos con **MLflow**.
+- Desplegar el modelo mediante **Streamlit**.
+- Automatizar el pipeline de entrenamiento.
+- Incorporar monitoreo del desempeño del modelo.
+- Evaluar técnicas de Explainable AI (SHAP y LIME).
 
 ---
 
@@ -297,8 +300,10 @@ Finalmente se elaboró un reporte ejecutivo con recomendaciones orientadas al ne
 
 Dra. en Ciencias Biológicas
 
-Data Scientist | Data Analyst
+**Data Scientist | Data Analyst**
 
-📧 Email: vaninacavallin@gmail.com
+📧 **Email:** vaninacavallin@gmail.com
 
-💼 LinkedIn: https://linkedin.com/in/vanina-cavallin
+💼 **LinkedIn:** https://linkedin.com/in/vanina-cavallin
+
+💻 **GitHub:** https://github.com/VaninaCavallin
