@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Images/banner.png" alt="Bank Churn Prediction" width="100%">
+  <img src="Images/banner.png" width="100%">
 </p>
 
 # 🏦 Bank Churn Prediction
