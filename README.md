@@ -237,7 +237,9 @@ Finalmente se elaboró un reporte ejecutivo con recomendaciones orientadas al ne
 
 ## Curva ROC
 
-> *(Agregar imagen)*
+<img width="806" height="816" alt="image" src="https://github.com/user-attachments/assets/299b0a57-8409-4a28-a66d-5314cd805831" />
+
+La curva ROC permite evaluar la capacidad discriminatoria del modelo para distinguir entre clientes que abandonan el banco y aquellos que permanecen. El mejor modelo alcanzó un ROC-AUC de 0.87, indicando un alto poder predictivo para el problema de churn.
 
 ---
 
