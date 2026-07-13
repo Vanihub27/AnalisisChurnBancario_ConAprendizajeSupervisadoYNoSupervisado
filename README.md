@@ -1,7 +1,10 @@
 # 🏦 Bank Churn Prediction
+
 ### End-to-End Machine Learning Pipeline para la predicción del abandono de clientes bancarios
 
 <p align="center">
+
+<!-- Aquí irá el banner del proyecto -->
 
 <img src="assets/banner_bank_churn.png" width="100%"/>
 
@@ -39,27 +42,27 @@
 
 # 📑 Tabla de contenidos
 
-- [Caso de negocio](#-caso-de-negocio)
-- [Objetivos](#-objetivos)
-- [Dataset](#-dataset)
-- [Tecnologías utilizadas](#-tecnologías-utilizadas)
-- [Metodología](#-metodología)
-- [Flujo del proyecto](#-flujo-del-proyecto)
-- [Desarrollo](#-desarrollo-del-proyecto)
-- [Resultados](#-resultados)
-- [Visualizaciones](#-visualizaciones)
-- [Competencias demostradas](#-competencias-demostradas)
-- [Valor agregado](#-valor-agregado)
-- [Próximas mejoras](#-próximas-mejoras)
-- [Autora](#-autora)
+- Caso de negocio
+- Objetivos
+- Dataset
+- Tecnologías utilizadas
+- Metodología
+- Flujo del proyecto
+- Desarrollo
+- Resultados
+- Visualizaciones
+- Competencias demostradas
+- Valor agregado
+- Próximas mejoras
+- Autora
 
 ---
 
 # 💼 Caso de negocio
 
-La pérdida de clientes (*Customer Churn*) representa uno de los principales desafíos para las entidades financieras, ya que impacta directamente sobre el **Customer Lifetime Value (CLV)**, los costos de adquisición y la rentabilidad del negocio.
+La pérdida de clientes (*Customer Churn*) representa uno de los principales desafíos para las entidades financieras, ya que impacta directamente sobre el Customer Lifetime Value (CLV), los costos de adquisición y la rentabilidad del negocio.
 
-El objetivo de este proyecto consiste en desarrollar un **pipeline completo de Machine Learning** capaz de identificar clientes con alto riesgo de abandono, permitiendo anticipar acciones de retención y optimizar la toma de decisiones comerciales.
+El objetivo de este proyecto consistió en desarrollar un pipeline completo de Machine Learning capaz de identificar clientes con alto riesgo de abandono, permitiendo anticipar acciones de retención y optimizar la toma de decisiones comerciales.
 
 ---
 
@@ -79,12 +82,12 @@ El objetivo de este proyecto consiste en desarrollar un **pipeline completo de M
 
 **Características principales**
 
-- 👥 Registros: **10.000 clientes**
-- 📋 Variables predictoras: **10**
+- 👥 10.000 clientes
+- 📊 10 variables predictoras
 - 🎯 Variable objetivo: **Exited**
-- 📊 Tipo de problema: **Clasificación binaria**
+- 🤖 Problema de clasificación binaria
 
-Variables más relevantes:
+Variables principales:
 
 - CreditScore
 - Geography
@@ -133,7 +136,8 @@ El proyecto fue desarrollado siguiendo la metodología **CRISP-DM**, recorriendo
 ```mermaid
 flowchart LR
 
-A[(Dataset)] --> B[Data Cleaning]
+A[(Dataset)]
+--> B[Data Cleaning]
 
 B --> C[EDA]
 
@@ -143,7 +147,7 @@ D --> E[Modelado Supervisado]
 
 E --> F[Evaluación]
 
-F --> G[Clustering]
+F --> G[K-Means]
 
 G --> H[Business Insights]
 
@@ -159,13 +163,12 @@ H --> I[Recomendaciones]
 Se realizaron:
 
 - Análisis Exploratorio de Datos (EDA)
-- Limpieza de datos
-- Tratamiento de valores faltantes
+- Limpieza y preprocesamiento
 - Ingeniería de variables
 - Escalado
 - Codificación de variables categóricas
 
-### Principales hallazgos
+### Hallazgos principales
 
 - La edad incrementa significativamente el riesgo de abandono.
 - Los clientes de Alemania presentan mayor probabilidad de churn.
@@ -176,7 +179,7 @@ Se realizaron:
 
 ## 2️⃣ Modelado supervisado
 
-### Modelos implementados
+Modelos implementados:
 
 - Logistic Regression
 - Random Forest
@@ -185,13 +188,12 @@ Se realizaron:
 - CatBoost
 - Stacking Classifier
 
-### Técnicas aplicadas
+Técnicas aplicadas:
 
 - Validación cruzada estratificada
 - GridSearchCV
 - Optimización de hiperparámetros
 - Early Stopping
-- Regularización
 - Feature Importance
 
 ---
@@ -200,13 +202,13 @@ Se realizaron:
 
 Se aplicó **K-Means** para identificar perfiles de clientes con diferentes características de comportamiento y riesgo de abandono.
 
-La segmentación complementó el modelo predictivo permitiendo proponer estrategias diferenciadas de retención.
+La segmentación permitió complementar el modelo predictivo y proponer estrategias diferenciadas de retención.
 
 ---
 
 ## 4️⃣ Consolidación y recomendaciones
 
-Se realizó una comparación integral de los modelos considerando:
+Se comparó el desempeño de todos los modelos mediante:
 
 - Accuracy
 - Precision
@@ -224,40 +226,53 @@ Finalmente se elaboró un reporte ejecutivo con recomendaciones orientadas al ne
 
 | Modelo | Accuracy | ROC-AUC | PR-AUC |
 |---------|---------:|---------:|---------:|
-| Logistic Regression | | | |
-| Random Forest | | | |
-| XGBoost | | | |
-| LightGBM | | | |
-| CatBoost | | | |
+| Logistic Regression | 0.714 | 0.777 | — |
+| Gradient Boosting | **0.869** | **0.870** | — |
 | **Stacking Classifier** | **0.871** | **0.871** | **0.725** |
 
 ---
 
 # 📊 Visualizaciones
 
-## Curva ROC
+## 📈 Curva ROC
 
-<img width="806" height="816" alt="image" src="https://github.com/user-attachments/assets/299b0a57-8409-4a28-a66d-5314cd805831" />
+<p align="center">
 
-La curva ROC permite evaluar la capacidad discriminatoria del modelo para distinguir entre clientes que abandonan el banco y aquellos que permanecen. El mejor modelo alcanzó un ROC-AUC de 0.87, indicando un alto poder predictivo para el problema de churn.
+<img src="https://github.com/user-attachments/assets/299b0a57-8409-4a28-a66d-5314cd805831" width="700"/>
 
----
+</p>
 
-## Matriz de confusión
-
-> *(Agregar imagen)*
+La curva ROC permite evaluar la capacidad discriminatoria del modelo para distinguir entre clientes que abandonan el banco y aquellos que permanecen. El mejor modelo alcanzó un **ROC-AUC de 0.87**, indicando un alto poder predictivo para el problema de churn.
 
 ---
 
-## Importancia de variables
+## 🎯 Importancia de variables
 
-> *(Agregar imagen)*
+<p align="center">
+
+<img src="https://github.com/user-attachments/assets/73b406b1-b30e-431b-994f-1586c7c50c86" width="850"/>
+
+</p>
+
+El análisis de importancia de variables mostró que **Age**, **NumOfProducts**, **IsActiveMember** y **Balance** fueron los principales factores asociados al abandono de clientes. Esta información resulta clave para diseñar estrategias de retención focalizadas y comprender el comportamiento del modelo.
+
+---
+
+## 🔍 Matriz de confusión
+
+<p align="center">
+
+<img src="https://github.com/user-attachments/assets/d9f0a4c4-88b3-402e-8c58-e8ee73998c73" width="700"/>
+
+</p>
+
+La matriz de confusión resume el desempeño del modelo sobre el conjunto de prueba. Permite visualizar la cantidad de clientes correctamente clasificados y los errores de predicción, facilitando el análisis del equilibrio entre falsos positivos y falsos negativos según los objetivos del negocio.
 
 ---
 
 # 💼 Competencias demostradas
 
-- End-to-End Machine Learning
+- Machine Learning End-to-End
 - Clasificación binaria
 - Aprendizaje supervisado
 - Aprendizaje no supervisado
@@ -274,25 +289,25 @@ La curva ROC permite evaluar la capacidad discriminatoria del modelo para distin
 
 ✅ Desarrollo de un pipeline completo de Ciencia de Datos.
 
-✅ Comparación de seis algoritmos de Machine Learning.
+✅ Comparación de múltiples algoritmos de Machine Learning.
 
 ✅ Integración de modelos supervisados y no supervisados.
 
-✅ Interpretación de resultados orientada a negocio.
+✅ Interpretación de resultados orientada al negocio.
 
 ✅ Aplicación de la metodología **CRISP-DM**.
 
-✅ Elaboración de recomendaciones accionables para estrategias de retención.
+✅ Generación de recomendaciones accionables para estrategias de retención.
 
 ---
 
 # 🚀 Próximas mejoras
 
-- Implementar seguimiento de experimentos con **MLflow**.
-- Desplegar el modelo mediante **Streamlit**.
+- Implementar seguimiento de experimentos mediante MLflow.
+- Desplegar el modelo con Streamlit.
 - Automatizar el pipeline de entrenamiento.
-- Incorporar monitoreo del desempeño del modelo.
-- Evaluar técnicas de Explainable AI (SHAP y LIME).
+- Incorporar monitoreo del modelo.
+- Implementar técnicas de Explainable AI (SHAP y LIME).
 
 ---
 
